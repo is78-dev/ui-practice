@@ -1,8 +1,11 @@
 ---
+import { getAbsoluteUrl } from "@/utils/getBaseUrl";
 import BaseLayout from "./BaseLayout.astro";
 ---
 
 <BaseLayout>
-  <a href="/" class="pb-4 block text-gray-500">トップへ戻る</a>
+  <a href={getAbsoluteUrl("/")} class="pb-4 block text-gray-500">
+    トップへ戻る
+  </a>
   <slot />
 </BaseLayout>

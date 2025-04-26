@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getAbsoluteUrl } from "@/utils/getBaseUrl";
 ---
 
 <BaseLayout title="Home">
@@ -7,8 +8,8 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
     <h1 class="text-4xl font-bold">UI Practice</h1>
     <a href="#" class="block">github</a>
     <ul class="space-y-2 list-disc pl-5">
-      <li><a href="react-demo">react-demo</a></li>
-      <li><a href="vue-demo">vue-demo</a></li>
+      <li><a href={getAbsoluteUrl("react-demo")}>react-demo</a></li>
+      <li><a href={getAbsoluteUrl("vue-demo")}>vue-demo</a></li>
     </ul>
   </main>
 </BaseLayout>
