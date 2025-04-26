@@ -2,6 +2,7 @@
   "name": "ui-practice",
   "type": "module",
   "version": "0.0.1",
+  "license": "MIT",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -9,6 +10,20 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.7.5"
+    "@tailwindcss/vite": "^4.1.4",
+    "astro": "^5.7.5",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.4",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@astrojs/react": "^4.2.5",
+    "@astrojs/vue": "^5.0.11",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@types/vue": "^2.0.0",
+    "prettier": "^3.5.3",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }
