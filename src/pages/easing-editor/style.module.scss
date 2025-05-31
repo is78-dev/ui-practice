@@ -1,0 +1,178 @@
+/* MyComponent.module.css */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+
+:root {
+  --background: #f5f5f5;
+  --foreground: #0e2a2e;
+  --primary: #0e2a2e;
+  --primary-foreground: #eeeeee;
+  --secondary: #bcbcbc;
+  --secondary-foreground: #0e2a2e;
+  --destructive: #e73c3c;
+  --destructive-foreground: #eeeeee;
+  --card: #ebebeb;
+  --card-foreground: #0e2a2e;
+}
+
+.root {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 16px;
+  background-color: var(--background);
+  color: var(--foreground);
+  min-height: 100vh;
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.05), 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05), 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: 10px 10px;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  line-height: 1.1em;
+  color: var(--foreground);
+}
+
+.controllBox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.curveEditor {
+  height: 300px;
+  width: 300px;
+  border: 1px solid var(--primary);
+  /* background-color: var(--card); */
+
+  line {
+    stroke: var(--primary);
+    stroke-width: 1;
+  }
+
+  circle {
+    fill: var(--primary);
+    cursor: pointer;
+    r: 15;
+  }
+
+  path {
+    stroke: var(--primary);
+    stroke-width: 3;
+    fill: none;
+  }
+}
+
+.curveControl {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  code {
+    font-family: monospace;
+    font-size: 1.2rem;
+    white-space: nowrap;
+  }
+
+  button {
+    display: block;
+    width: 100%;
+    padding: 4px 8px;
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    font-size: 0.8rem;
+    margin-top: 4px;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(1.1);
+    }
+  }
+
+  .outline {
+    background-color: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+  }
+
+  .destructive {
+    background-color: var(--destructive);
+    color: var(--destructive-foreground);
+  }
+}
+
+.savedCurveList {
+  display: flex;
+  flex-wrap: wrap;
+  align-self: flex-start;
+  gap: 16px;
+}
+
+.savedCurveItem {
+  height: 100px;
+  width: 100px;
+  background-color: var(--card);
+  position: relative;
+
+  path {
+    stroke: var(--primary);
+    stroke-width: 1.5;
+    fill: none;
+  }
+
+  line {
+    stroke: var(--primary);
+    stroke-width: 0.5;
+  }
+
+  circle {
+    fill: var(--primary);
+    cursor: pointer;
+    r: 2;
+  }
+
+  .deleteButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%) scale(0.8);
+    height: 24px;
+    width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background-color: var(--destructive);
+    color: var(--destructive-foreground);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      opacity 0.2s linear,
+      transform 0.2s linear;
+
+    &:hover {
+      filter: brightness(1.1);
+    }
+  }
+
+  &:hover {
+    .deleteButton {
+      opacity: 1;
+      transform: translate(50%, -50%) scale(1);
+      pointer-events: auto;
+    }
+  }
+}
